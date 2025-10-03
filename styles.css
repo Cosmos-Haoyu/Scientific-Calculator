@@ -47,8 +47,15 @@ header h1{font-size:18px;margin:0;font-weight:700}
 .display .expr{width:100%;border:0;background:transparent;color:var(--muted);font-size:13px;outline:none}
 .display .result{font-size:34px;font-weight:700;text-align:right;color:var(--accent);}
 
-.buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.row{display:contents}
+.buttons{
+  display:grid;
+  grid-template-columns: 1fr 96px; /* left keypad + right operator column */
+  gap:14px;
+  align-items:start;
+}
+.left{ display:grid; grid-template-columns: repeat(3, 1fr); gap:12px }
+.ops{ display:flex; flex-direction:column; gap:12px }
+.row{ display:contents }
 
 button{
   padding:12px 10px;
@@ -66,16 +73,20 @@ button:hover{ transform: translateY(-2px); box-shadow: 0 8px 20px rgba(2,6,23,0.
 button:active{ transform: translateY(1px); }
 button:focus{ outline: 3px solid rgba(6,182,212,0.12); }
 
-button.equals{
-  grid-row: span 2; /* larger vertical size for equals */
+.equals{
+  height: 120px;
+  align-self:stretch;
   background: linear-gradient(180deg,var(--accent),var(--accent-2));
   color: #022028;
   font-size:18px;
   box-shadow: 0 8px 24px rgba(6,182,212,0.18);
+  border-radius:10px;
 }
 
 /* special smaller key appearance */
 .muted-key{ background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); color:var(--muted); font-weight:600 }
+
+.wide{ grid-column: span 2; text-align: left; padding-left: 18px }
 
 footer{margin-top:14px;color:var(--muted);font-size:12px;text-align:center}
 
