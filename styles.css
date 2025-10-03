@@ -1,20 +1,85 @@
 :root{
-  --bg:#0f1724; --panel:#111827; --accent:#06b6d4; --muted:#94a3b8; --key:#1f2937; --key2:#374151;
+  --bg-1: #071126;    /* page gradient start */
+  --bg-2: #071b1f;    /* page gradient end */
+  --card-1: #081323;  /* card gradient start */
+  --card-2: #06121a;  /* card gradient end */
+  --accent: #06b6d4;  /* cyan */
+  --accent-2: #0ea5a4;
+  --muted: #94a3b8;
+  --key-1: #0f1724;
+  --key-2: #19232d;
+  --glass: rgba(255,255,255,0.03);
+  --shadow: rgba(2,6,23,0.6);
 }
+
 *{box-sizing:border-box}
 html,body{height:100%}
-body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#071126 0%,#071b1f 100%);display:flex;align-items:center;justify-content:center;padding:32px}
-.calc{width:420px;background:linear-gradient(180deg,var(--panel),#0b1220);border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(2,6,23,.6)}
-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-header h1{font-size:18px;margin:0}
+body{
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #e6eef6;
+  background: linear-gradient(180deg,var(--bg-1),var(--bg-2));
+  display:flex;align-items:center;justify-content:center;padding:32px;
+}
+
+.calc{
+  width:420px;
+  max-width:96vw;
+  background: linear-gradient(180deg,var(--card-1),var(--card-2));
+  border-radius:18px;
+  padding:20px 20px 18px;
+  box-shadow: 0 8px 30px var(--shadow), inset 0 1px 0 rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+header h1{font-size:18px;margin:0;font-weight:700}
 .mode{font-size:13px;color:var(--muted)}
-.display{background:#060812;border-radius:8px;padding:14px;color:var(--accent);margin-bottom:12px}
-.expr{width:100%;border:0;background:transparent;color:var(--muted);font-size:14px;outline:none}
-.result{font-size:28px;font-weight:600;text-align:right;color:var(--accent);}
-.buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+
+.display{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  padding:14px 16px;
+  color:var(--accent);
+  margin-bottom:16px;
+  display:flex;flex-direction:column;gap:6px;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+.display .expr{width:100%;border:0;background:transparent;color:var(--muted);font-size:13px;outline:none}
+.display .result{font-size:34px;font-weight:700;text-align:right;color:var(--accent);}
+
+.buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .row{display:contents}
-button{padding:14px;border-radius:8px;border:0;background:linear-gradient(180deg,var(--key),var(--key2));color:#e6eef6;font-weight:600;font-size:14px;cursor:pointer}
-button:active{transform:translateY(1px)}
-button.equals{grid-column:4;grid-row:6/8;background:linear-gradient(180deg,#06b6d4,#0891b2);color:#022028}
-footer{margin-top:10px;color:var(--muted);font-size:12px;text-align:center}
-@media (max-width:480px){.calc{width:100%;padding:12px}}
+
+button{
+  padding:12px 10px;
+  border-radius:10px;
+  border: 1px solid rgba(255,255,255,0.03);
+  background: linear-gradient(180deg,var(--key-1),var(--key-2));
+  color:#e6eef6;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+  transition: transform .06s ease, box-shadow .08s ease, background .12s ease;
+  box-shadow: 0 4px 10px rgba(2,6,23,0.25);
+}
+button:hover{ transform: translateY(-2px); box-shadow: 0 8px 20px rgba(2,6,23,0.35); }
+button:active{ transform: translateY(1px); }
+button:focus{ outline: 3px solid rgba(6,182,212,0.12); }
+
+button.equals{
+  grid-row: span 2; /* larger vertical size for equals */
+  background: linear-gradient(180deg,var(--accent),var(--accent-2));
+  color: #022028;
+  font-size:18px;
+  box-shadow: 0 8px 24px rgba(6,182,212,0.18);
+}
+
+/* special smaller key appearance */
+.muted-key{ background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02)); color:var(--muted); font-weight:600 }
+
+footer{margin-top:14px;color:var(--muted);font-size:12px;text-align:center}
+
+@media (max-width:480px){
+  .calc{width:100%;padding:12px}
+  .display .result{font-size:28px}
+}

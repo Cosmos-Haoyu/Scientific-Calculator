@@ -20,68 +20,70 @@
       <div id="result" class="result">0</div>
     </section>
 
-    <section class="buttons">
+    <section class="buttons" role="group" aria-label="Calculator buttons">
       <div class="row">
-        <button data-fn="clear">C</button>
-        <button data-fn="back">⌫</button>
-        <button data-fn="paren">( )</button>
-        <button data-fn="divide">÷</button>
+        <button data-fn="clear" class="muted-key" aria-label="clear">C</button>
+        <button data-fn="back" class="muted-key" aria-label="backspace">⌫</button>
+        <button data-fn="paren" class="muted-key" aria-label="parentheses">( )</button>
+        <button data-fn="divide" aria-label="divide">÷</button>
       </div>
 
       <div class="row">
-        <button data-fn="sin">sin</button>
-        <button data-fn="cos">cos</button>
-        <button data-fn="tan">tan</button>
-        <button data-fn="multiply">×</button>
+        <button data-fn="sin" aria-label="sine">sin</button>
+        <button data-fn="cos" aria-label="cosine">cos</button>
+        <button data-fn="tan" aria-label="tangent">tan</button>
+        <button data-fn="multiply" aria-label="multiply">×</button>
       </div>
 
       <div class="row">
-        <button data-fn="asin">asin</button>
-        <button data-fn="acos">acos</button>
-        <button data-fn="atan">atan</button>
-        <button data-fn="minus">−</button>
+        <button data-fn="asin" class="muted-key" aria-label="arcsine">asin</button>
+        <button data-fn="acos" class="muted-key" aria-label="arccosine">acos</button>
+        <button data-fn="atan" class="muted-key" aria-label="arctangent">atan</button>
+        <button data-fn="minus" aria-label="minus">−</button>
       </div>
 
       <div class="row">
-        <button data-fn="ln">ln</button>
-        <button data-fn="log10">log</button>
-        <button data-fn="exp">e^x</button>
-        <button data-fn="plus">+</button>
+        <button data-fn="ln" class="muted-key" aria-label="natural logarithm">ln</button>
+        <button data-fn="log10" class="muted-key" aria-label="log base 10">log</button>
+        <button data-fn="exp" class="muted-key" aria-label="exponential">e^x</button>
+        <button data-fn="plus" aria-label="plus">+</button>
       </div>
 
       <div class="row">
-        <button data-fn="pow">xʸ</button>
-        <button data-fn="sqrt">√</button>
-        <button data-fn="fact">x!</button>
-        <button data-fn="mod">mod</button>
+        <button data-fn="pow" class="muted-key" aria-label="power">xʸ</button>
+        <button data-fn="sqrt" class="muted-key" aria-label="square root">√</button>
+        <button data-fn="fact" class="muted-key" aria-label="factorial">x!</button>
+        <button data-fn="mod" class="muted-key" aria-label="modulus">mod</button>
       </div>
 
       <div class="row">
         <button data-fn="7">7</button>
         <button data-fn="8">8</button>
         <button data-fn="9">9</button>
-        <button data-fn="percent">%</button>
+        <button data-fn="percent" class="muted-key" aria-label="percent">%</button>
       </div>
 
       <div class="row">
         <button data-fn="4">4</button>
         <button data-fn="5">5</button>
         <button data-fn="6">6</button>
-        <button data-fn="ans">Ans</button>
+        <button data-fn="ans" class="muted-key" aria-label="answer">Ans</button>
       </div>
 
       <div class="row">
         <button data-fn="1">1</button>
         <button data-fn="2">2</button>
         <button data-fn="3">3</button>
-        <button data-fn="pi">π</button>
+        <button data-fn="pi" class="muted-key" aria-label="pi">π</button>
       </div>
 
       <div class="row">
-        <button data-fn="0">0</button>
+        <button data-fn="0" style="grid-column: span 2; text-align: left; padding-left:18px">0</button>
         <button data-fn="dot">.</button>
-        <button data-fn="neg">+/-</button>
-        <button data-fn="equals" class="equals">=</button>
+        <button data-fn="equals" class="equals" aria-label="equals">=</button>
+      </div>
+      <div class="row">
+        <button data-fn="neg" class="muted-key" style="grid-column: span 4;">+/-</button>
       </div>
     </section>
 
