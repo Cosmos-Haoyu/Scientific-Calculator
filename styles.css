@@ -1,0 +1,20 @@
+:root{
+  --bg:#0f1724; --panel:#111827; --accent:#06b6d4; --muted:#94a3b8; --key:#1f2937; --key2:#374151;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#071126 0%,#071b1f 100%);display:flex;align-items:center;justify-content:center;padding:32px}
+.calc{width:420px;background:linear-gradient(180deg,var(--panel),#0b1220);border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(2,6,23,.6)}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+header h1{font-size:18px;margin:0}
+.mode{font-size:13px;color:var(--muted)}
+.display{background:#060812;border-radius:8px;padding:14px;color:var(--accent);margin-bottom:12px}
+.expr{width:100%;border:0;background:transparent;color:var(--muted);font-size:14px;outline:none}
+.result{font-size:28px;font-weight:600;text-align:right;color:var(--accent);}
+.buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.row{display:contents}
+button{padding:14px;border-radius:8px;border:0;background:linear-gradient(180deg,var(--key),var(--key2));color:#e6eef6;font-weight:600;font-size:14px;cursor:pointer}
+button:active{transform:translateY(1px)}
+button.equals{grid-column:4;grid-row:6/8;background:linear-gradient(180deg,#06b6d4,#0891b2);color:#022028}
+footer{margin-top:10px;color:var(--muted);font-size:12px;text-align:center}
+@media (max-width:480px){.calc{width:100%;padding:12px}}

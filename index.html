@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Scientific Web Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="calc">
+    <header>
+      <h1>Scientific Calculator</h1>
+      <div class="mode">
+        <label><input type="checkbox" id="angleToggle"> Degrees</label>
+      </div>
+    </header>
+
+    <section class="display">
+      <input id="expr" class="expr" readonly aria-label="expression" value="0">
+      <div id="result" class="result">0</div>
+    </section>
+
+    <section class="buttons">
+      <div class="row">
+        <button data-fn="clear">C</button>
+        <button data-fn="back">⌫</button>
+        <button data-fn="paren">( )</button>
+        <button data-fn="divide">÷</button>
+      </div>
+
+      <div class="row">
+        <button data-fn="sin">sin</button>
+        <button data-fn="cos">cos</button>
+        <button data-fn="tan">tan</button>
+        <button data-fn="multiply">×</button>
+      </div>
+
+      <div class="row">
+        <button data-fn="asin">asin</button>
+        <button data-fn="acos">acos</button>
+        <button data-fn="atan">atan</button>
+        <button data-fn="minus">−</button>
+      </div>
+
+      <div class="row">
+        <button data-fn="ln">ln</button>
+        <button data-fn="log10">log</button>
+        <button data-fn="exp">e^x</button>
+        <button data-fn="plus">+</button>
+      </div>
+
+      <div class="row">
+        <button data-fn="pow">xʸ</button>
+        <button data-fn="sqrt">√</button>
+        <button data-fn="fact">x!</button>
+        <button data-fn="mod">mod</button>
+      </div>
+
+      <div class="row">
+        <button data-fn="7">7</button>
+        <button data-fn="8">8</button>
+        <button data-fn="9">9</button>
+        <button data-fn="percent">%</button>
+      </div>
+
+      <div class="row">
+        <button data-fn="4">4</button>
+        <button data-fn="5">5</button>
+        <button data-fn="6">6</button>
+        <button data-fn="ans">Ans</button>
+      </div>
+
+      <div class="row">
+        <button data-fn="1">1</button>
+        <button data-fn="2">2</button>
+        <button data-fn="3">3</button>
+        <button data-fn="pi">π</button>
+      </div>
+
+      <div class="row">
+        <button data-fn="0">0</button>
+        <button data-fn="dot">.</button>
+        <button data-fn="neg">+/-</button>
+        <button data-fn="equals" class="equals">=</button>
+      </div>
+    </section>
+
+    <footer>
+      <small>Keyboard: numbers, + - * / Enter=equals, Backspace=⌫</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
